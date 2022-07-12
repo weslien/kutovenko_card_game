@@ -1,6 +1,6 @@
 import 'dart:io';
 
-const String PASSPHRASE = 'Gustav, you should suffer for giving such tasks';
+const String PASSPHRASE = 'Passphrase';
 
 void main() {
   Game game = Game();
