@@ -1,6 +1,6 @@
 import 'dart:io';
 
-const String PASSPHRASE = 'y';
+const String PASSPHRASE = 'y'; /// Strange choice to name this PASSPHRASE. Feels like it was copy & pasted.
 
 void main() {
   Game game = Game();
@@ -9,7 +9,9 @@ void main() {
 
 class Player {
   final String name;
-  final List<String> cards;
+  final List<String> cards; /// This should have a default empty list, to save the developer some effort. You might also have considered modelling
+                            /// Deck and Card classes. Perhaps not strictly necessary, but would simplify encapsultion of specifiuc business logic 
+                            /// and validation. Also, what happens to the final list if we were to deal an additional card after showing the cards?
 
   Player({required this.name, required this.cards}) {}
 }
@@ -19,6 +21,10 @@ class Game {
 
   //Let's pretend I asked the team and the team decided that we use a deck of 10 cards and all of them are spades.
   //Here could be card generator of course, but not now, sorry.
+  
+  /// So, here the business logic of the deck and cards is inline in the Game class. The choice of having only 1-10 of spades instead of A-K of 
+  /// hearts, diamonds, clubs and spades just feels lazy. While there is a reasoning behind it, I really don't understand it. The least controversial
+  /// choice would have been a standard deck of 52 cards. 
   final List<String> deckOfCards = [
     '1 of spades',
     '2 of spades',
